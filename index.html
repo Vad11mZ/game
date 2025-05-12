@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рулетка Казино</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Колесо Фортуны</h1>
+        <div id="roulette" class="roulette">
+            <div id="wheel" class="wheel">
+                <!-- Числа от 0 до 11 -->
+                <div class="number" style="--i: 0;" data-number="0"></div>
+                <div class="number" style="--i: 1;" data-number="11"></div>
+                <div class="number" style="--i: 2;" data-number="10"></div>
+                <div class="number" style="--i: 3;" data-number="9"></div>
+                <div class="number" style="--i: 4;" data-number="8"></div>
+                <div class="number" style="--i: 5;" data-number="7"></div>
+                <div class="number" style="--i: 6;" data-number="6"></div>
+                <div class="number" style="--i: 7;" data-number="5"></div>
+                <div class="number" style="--i: 8;" data-number="4"></div>
+                <div class="number" style="--i: 9;" data-number="3"></div>
+                <div class="number" style="--i: 10;" data-number="2"></div>
+                <div class="number" style="--i: 11;" data-number="1"></div>
+            </div>
+            <div class="pointer"></div>
+        </div>
+        <div class="balance">Баланс: <span id="balance">1000</span> кредитов</div>
+        
+        <div class="controls">
+            <label for="bet-type">Тип ставки:</label>
+            <select id="bet-type">
+                <option value="number">Число (0-11)</option>
+                <option value="color">Цвет (красное/черное/зелёное)</option>
+                <option value="even-odd">Чет/Нечет</option>
+            </select>
+
+            <div id="bet-input">
+                <label for="bet-value">Ставка:</label>
+                <input type="number" id="bet-value" min="10" max="500" value="10">
+            </div>
+
+            <div id="number-input" class="hidden">
+                <label for="number-value">Число (0-11):</label>
+                <input type="number" id="number-value" min="0" max="11">
+            </div>
+
+            <div id="color-input" class="hidden">
+                <label for="color-value">Цвет:</label>
+                <select id="color-value">
+                    <option value="красное">Красное</option>
+                    <option value="черное">Черное</option>
+                    <option value="черное">Зелёное</option>
+                </select>
+            </div>
+
+            <div id="even-odd-input" class="hidden">
+                <label for="even-odd-value">Чет/Нечет:</label>
+                <select id="even-odd-value">
+                    <option value="чет">Чет</option>
+                    <option value="нечет">Нечет</option>
+                </select>
+            </div>
+
+            <button id="spin">Крутить рулетку</button>
+        </div>
+        <div id="result" class="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
